@@ -9,35 +9,48 @@
 \institute{Information Security Group,\\
 Royal Holloway}
 
+
+
+\newenvironment{slideSet}[1]{\section{#1}}{}
+\newenvironment{slide}[1]{
+	\subsection{#1}
+	\begin{frame}\frametitle{#1}
+}{\end{frame}}
+\newenvironment{slide*}[1]{
+	\begin{frame}\frametitle{#1}
+}{\end{frame}}
+
 \begin{document}
 
 \rhultitlepage
 
-\begin{frame}\frametitle{Presentation Contents}
+\begin{slide*}{Presentation Contents}
 	\tableofcontents
-\end{frame}
+\end{slide}
 
-\section{Title Page}
-\begin{frame}\frametitle{RHUL Title Page}
+\begin{slideSet}{Title Page}
+\begin{slide}{RHUL Title Page}
 \begin{itemize}
 	\item We (the authors of this theme) think that the title page looks better if it has the single colour footer.
 	\item To use this option simply create your title page slide using \texttt{\textbackslash rhultitlepage} (don't put it in a frame).
 	\item If you wish to have the same footer on every slide, including title page, just create the title page in the normal way e.g. \texttt{\textbackslash frame\{\textbackslash titlepage\}}.
 \end{itemize}
-\end{frame}
+\end{slide}
+\end{slideSet}
 
-\section{Table of Contents}
-\begin{frame}\frametitle{Showing Progress Through the Presentation}
+\begin{slideSet}{Table of Contents}
+\begin{slide}{Showing Progress Through the Presentation}
 \begin{itemize}
 	\item The beamer style is also able to show a table of contents whenever a new section or subsection is begun.
 	\item These options are selected by passing the appropriate parameters when using the ISG theme.
 	\item E.g.\ \texttt{\textbackslash usetheme[displaytocsection]\{ISG\}} or \texttt{\textbackslash usetheme[displaytocsubsection]\{ISG\}}.
 \end{itemize}
-\end{frame}
+\end{slide}
+\end{slideSet}
 
 \setbeamercovered{invisible}
-\section{Example Slides}
-\begin{frame}\frametitle{Invisible Covering/Uncovering of Content}
+\begin{slideSet}{Example Slides}
+\begin{slide}{Invisible Covering/Uncovering of Content}
 \begin{itemize}
 	\item I'm the first item!
 	\pause
@@ -45,10 +58,11 @@ Royal Holloway}
 	\pause
 	\item Invisible is selected by \texttt{\\setbeamercovered\{invisible\}}
 \end{itemize}
-\end{frame}
+\end{slide}
+
 
 \setbeamercovered{transparent}
-\begin{frame}\frametitle{Transparent Covering/Uncovering}
+\begin{slide}{Transparent Covering/Uncovering}
 \begin{itemize}
 	\item I'm the first item!
 	\pause
@@ -56,16 +70,18 @@ Royal Holloway}
 	\pause
 	\item Transparent is selected by \texttt{\\setbeamercovered\{transparent\}}
 \end{itemize}
-\end{frame}
+\end{slide}
+\end{slideSet}
 
-\section{One more thing}
-\begin{frame}\frametitle{A quirk of the ISG style}
+\begin{slideSet}{One more thing}
+\begin{slide}{A quirk of the ISG style}
 \begin{itemize}
 	\item The title page has a few ``quirks'' due to the way it has been implemented.
 	\item This means that you have to build your .tex file three times before things are in the right place.
 	\item This is less tedious if you use a make file!
 \end{itemize}
-\end{frame}
+\end{slide}
+\end{slideSet}
 
 \end{document}
 
